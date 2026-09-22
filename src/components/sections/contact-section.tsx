@@ -1,13 +1,15 @@
 import { ArrowUpRight, Download, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 import { profile, socialLinks } from "@/data/portfolio";
 
-export function ContactSection() {
+export function ContactSection({ standalone = false }: { standalone?: boolean }) {
   return (
     <section id="contact" className="section section-contact">
       <div className="container contact-inner">
         <div>
+          {standalone && <Link className="experience-return" href="/">Back to portfolio</Link>}
           <span className="contact-eyebrow">LET&apos;S CONNECT</span>
-          <h2>Let&apos;s talk through<br /><em>the problem.</em></h2>
+          {standalone ? <h1>Let&apos;s talk through<br /><em>the problem.</em></h1> : <h2>Let&apos;s talk through<br /><em>the problem.</em></h2>}
           <p>For development roles, systems implementation, or a conversation about a technical challenge, I would be glad to connect.</p>
           <div className="contact-methods">
             <a className="contact-email" href={`mailto:${profile.email}`} aria-label={`Contact Nichos by email at ${profile.email}`}><Mail size={18} aria-hidden="true" />Contact Nichos</a>

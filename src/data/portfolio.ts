@@ -33,8 +33,8 @@ export const profile = {
     "My current focus is deepening my software engineering practice across backend systems, architecture, and full-stack development. Over time, I hope to bring that technical grounding into AI solutions architecture and client-facing work.",
   ],
   photo: {
-    src: "/images/nichos-portrait.jpg",
-    alt: "Nichos Ragasa seated in a casual portrait",
+    src: "/images/nichos-portrait-editorial.png",
+    alt: "Portrait of Nichos Ragasa",
   },
   resumeUrl: "/resume/nichos-ragasa-resume.pdf",
 } as const;

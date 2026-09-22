@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowDownRight, ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile, socialLinks } from "@/data/portfolio";
 
 const iconByKind = { github: Github, linkedin: Linkedin, email: Mail };
@@ -11,13 +12,8 @@ export function OverviewSection() {
       <div className="container solution-hero-inner">
         <div className="overview-identity solution-identity">
           <div className="overview-portrait-frame">
-            <span className="overview-frame-corner overview-frame-corner--top-left" aria-hidden="true" />
-            <span className="overview-frame-corner overview-frame-corner--top-right" aria-hidden="true" />
-            <span className="overview-frame-corner overview-frame-corner--bottom-left" aria-hidden="true" />
-            <span className="overview-frame-corner overview-frame-corner--bottom-right" aria-hidden="true" />
             <div className="overview-portrait">
-              <Image src={profile.photo.src} alt={profile.photo.alt} fill sizes="(max-width: 700px) 290px, (max-width: 1100px) 280px, 350px" priority />
-              <div className="overview-photo-label" aria-hidden="true">Incoming System Consultant</div>
+              <Image src={profile.photo.src} alt={profile.photo.alt} fill sizes="(max-width: 700px) 290px, (max-width: 1100px) 310px, 370px" priority />
             </div>
           </div>
           <div className="overview-identity-copy">
@@ -40,8 +36,8 @@ export function OverviewSection() {
         <p className="solution-hero-intro">My backend experience spans APIs, data-driven features, testing, and release support. As I move into systems consulting, I am focused on understanding client requirements, resolving application issues, and helping people use their systems with confidence.</p>
         <div className="solution-hero-role"><span>Next chapter</span><p>Incoming System Consultant at {profile.incomingRole.company} <strong>· {profile.incomingRole.starts}</strong></p></div>
         <div className="overview-actions solution-hero-actions">
-          <a className="button button-primary" href="#experience">Explore experience <ArrowDownRight size={18} aria-hidden="true" /></a>
-          <a className="overview-scroll-link" href="#contact">Get in touch <ArrowUpRight size={17} aria-hidden="true" /></a>
+          <Link className="button button-primary" href="/experience">Explore experience <ArrowRight size={18} aria-hidden="true" /></Link>
+          <Link className="overview-scroll-link" href="/contact">Get in touch <ArrowUpRight size={17} aria-hidden="true" /></Link>
         </div>
       </div>
       <div className="lifecycle-band">

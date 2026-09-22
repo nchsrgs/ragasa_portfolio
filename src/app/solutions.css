@@ -1,12 +1,12 @@
 .solution-hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 345px);
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 370px);
   grid-template-areas: "copy image" "intro image" "role image" "actions image";
   column-gap: clamp(34px, 6vw, 110px);
   align-content: center;
   padding-block: 50px 47px;
 }
-.solution-identity { grid-area: image; width: 100%; max-width: 345px; justify-self: end; align-self: center; padding: 0; }
+.solution-identity { grid-area: image; width: 100%; max-width: 370px; justify-self: end; align-self: center; padding: 0; }
 .solution-hero-copy { grid-area: copy; align-self: end; min-width: 0; }
 .solution-hero-kicker { display: flex; align-items: center; gap: 9px; margin: 0 0 17px; color: var(--overview-accent); font: 700 11px/1.45 var(--font-code); text-transform: uppercase; }
 .solution-hero-kicker span { flex: 0 0 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--type-green); }
@@ -20,15 +20,23 @@
 .solution-hero-role strong { color: var(--muted); font-weight: 600; white-space: nowrap; }
 .solution-hero-actions { grid-area: actions; margin-top: 22px; }
 .solution-hero-actions .button { min-height: 42px; padding-inline: 17px; font-size: 13px; }
-.solution-hero .overview-portrait { aspect-ratio: .88; }
-.solution-hero .overview-photo-label { font-size: 9px; }
+.solution-hero .overview-portrait { aspect-ratio: .82; }
 .solution-hero .overview-identity-copy { padding-top: 12px; }
+.solution-hero .overview-location { justify-content: center; }
 
 .solution-experience-section, .solution-capabilities-section, .solution-credentials-section { padding-block: 72px 78px; scroll-margin-top: 64px; }
 .solution-experience-section, .solution-credentials-section { background: var(--bg); }
 .solution-capabilities-section { background: color-mix(in srgb, var(--bg) 95%, var(--overview-accent)); border-block: 1px solid var(--line); }
 .solution-experience-section .section-heading, .solution-capabilities-section .section-heading, .solution-credentials-section .section-heading { margin-bottom: 20px; padding-bottom: 20px; }
-.solution-experience-section .section-heading h2, .solution-capabilities-section .section-heading h2, .solution-credentials-section .section-heading h2 { font: 700 30px/1.18 var(--font-code); }
+.solution-experience-section .section-heading :is(h1, h2), .solution-capabilities-section .section-heading h2, .solution-credentials-section .section-heading h2 { font: 700 30px/1.18 var(--font-code); }
+.experience-page .solution-experience-section { padding-top: 80px; }
+.contact-page { min-height: calc(100vh - 146px); display: grid; }
+.contact-page .section-contact { align-content: center; width: 100%; }
+.contact-page .section-contact h1 { max-width: 16ch; margin: 27px 0 22px; font-size: 58px; line-height: 1.02; }
+.contact-page .section-contact h1 em { color: var(--type-secondary); font-style: normal; }
+.contact-page .experience-return { display: flex; width: fit-content; }
+.experience-return { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 36px; color: var(--muted); font-size: 13px; font-weight: 650; transition: color .2s; }
+.experience-return:hover, .experience-return:focus-visible { color: var(--overview-accent); }
 .solution-experience-section .section-number { color: var(--overview-accent); }
 .solution-capabilities-section .section-number { color: var(--type-yellow); }
 .solution-credentials-section .section-number { color: var(--type-green); }
@@ -50,7 +58,8 @@
 .solution-contributions strong { display: block; font-size: 12px; line-height: 1.35; }
 .solution-contributions span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; line-height: 1.5; }
 .solution-experience-disclosure { max-width: 850px; margin-top: 20px; border-top: 1px solid var(--line); }
-.solution-experience-disclosure summary { display: flex; align-items: center; gap: 8px; width: fit-content; padding-top: 13px; color: var(--overview-accent); font-size: 12px; font-weight: 700; list-style: none; cursor: pointer; }
+.solution-experience-disclosure summary { display: flex; align-items: center; gap: 8px; width: fit-content; padding-top: 13px; color: var(--ink); font-size: 12px; font-weight: 700; list-style: none; cursor: pointer; transition: color .2s; }
+.solution-experience-disclosure summary:hover, .solution-experience-disclosure summary:focus-visible { color: var(--overview-accent); }
 .solution-experience-disclosure summary::-webkit-details-marker { display: none; }
 .solution-experience-disclosure summary::marker { content: ""; }
 .solution-experience-disclosure summary svg { transition: transform .2s; }
@@ -72,7 +81,8 @@
 .solution-capability li { color: var(--ink); font: 600 12px/1.5 var(--font-code); }
 .solution-capability li + li::before { content: "/"; padding-right: 18px; color: var(--muted); }
 .solution-toolkit { border-bottom: 1px solid var(--line); }
-.solution-toolkit > summary { display: flex; align-items: center; gap: 8px; width: fit-content; padding: 19px 0; color: var(--overview-accent); font-size: 12px; font-weight: 700; list-style: none; cursor: pointer; }
+.solution-toolkit > summary { display: flex; align-items: center; gap: 8px; width: fit-content; padding: 19px 0; color: var(--ink); font-size: 12px; font-weight: 700; list-style: none; cursor: pointer; transition: color .2s; }
+.solution-toolkit > summary:hover, .solution-toolkit > summary:focus-visible { color: var(--overview-accent); }
 .solution-toolkit > summary::-webkit-details-marker { display: none; }
 .solution-toolkit > summary::marker { content: ""; }
 .solution-toolkit > summary svg { transition: transform .2s; }
@@ -92,7 +102,8 @@
 .solution-education article p { margin: 9px 0 0; color: var(--muted); font-size: 14px; }
 .solution-education article > span { display: block; margin-top: 14px; color: var(--overview-accent); font: 650 11px/1.5 var(--font-code); }
 .solution-education details { border-top: 1px solid var(--line); }
-.solution-education details summary { display: flex; align-items: center; gap: 7px; width: fit-content; padding: 15px 0; color: var(--overview-accent); font-size: 12px; font-weight: 700; list-style: none; cursor: pointer; }
+.solution-education details summary { display: flex; align-items: center; gap: 7px; width: fit-content; padding: 15px 0; color: var(--ink); font-size: 12px; font-weight: 700; list-style: none; cursor: pointer; transition: color .2s; }
+.solution-education details summary:hover, .solution-education details summary:focus-visible { color: var(--overview-accent); }
 .solution-education details summary::-webkit-details-marker { display: none; }
 .solution-education details summary::marker { content: ""; }
 .solution-education details summary svg { transition: transform .2s; }
@@ -122,7 +133,7 @@
 .section-contact p { max-width: 62ch; }
 
 @media (max-width: 1100px) {
-  .solution-hero-inner { grid-template-columns: minmax(0, 1fr) minmax(220px, 280px); column-gap: 40px; }
+  .solution-hero-inner { grid-template-columns: minmax(0, 1fr) minmax(220px, 310px); column-gap: 40px; }
   .solution-hero-copy h1 { font-size: 34px; }
   .solution-hero-copy h2 { font-size: 33px; }
   .solution-contributions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -134,7 +145,6 @@
   .solution-identity { display: contents; }
   .solution-hero .overview-portrait-frame { grid-area: image; width: min(100%, 290px); justify-self: center; }
   .solution-hero .overview-portrait { aspect-ratio: .8; }
-  .solution-hero .overview-photo-label { right: 10px; bottom: 10px; left: 10px; min-height: 0; padding: 8px 10px; font-size: 9px; }
   .solution-hero .overview-identity-copy { grid-area: meta; justify-self: center; width: min(100%, 290px); padding: 12px 8px 0; text-align: center; }
   .solution-hero .overview-location { justify-content: center; font-size: 10px; }
   .solution-hero .overview-socials { justify-content: center; width: 100%; gap: 6px; margin-top: 10px; padding-top: 9px; }
@@ -153,7 +163,7 @@
   .solution-hero-actions .button { min-height: 38px; padding-inline: 12px; font-size: 11px; }
   .solution-hero-actions .overview-scroll-link { font-size: 11px; }
   .solution-experience-section, .solution-capabilities-section, .solution-credentials-section { padding-block: 55px 61px; }
-  .solution-experience-section .section-heading h2, .solution-capabilities-section .section-heading h2, .solution-credentials-section .section-heading h2 { font-size: 25px; }
+  .solution-experience-section .section-heading :is(h1, h2), .solution-capabilities-section .section-heading h2, .solution-credentials-section .section-heading h2 { font-size: 25px; }
   .solution-experience-item { display: block; padding: 22px 0 31px; }
   .solution-experience-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
   .solution-experience-meta p { margin: 0; text-align: right; }
@@ -178,6 +188,7 @@
   .certificate-record-image { aspect-ratio: 1.29; padding: 11px; }
   .certificate-record-image img { max-height: none; }
   .section-contact h2 { font-size: 45px; }
+  .contact-page .section-contact h1 { font-size: 45px; }
 }
 
 @media (max-width: 380px) {

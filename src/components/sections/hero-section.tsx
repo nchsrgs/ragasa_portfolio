@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { profile, socialLinks } from "@/data/portfolio";
 import { PracticeBand } from "@/components/sections/practice-band";
@@ -23,8 +24,8 @@ export function HeroSection() {
         <p className="hero-lead">{profile.heroLead}</p>
         <p className="hero-description">{profile.heroDescription}</p>
         <div className="hero-actions">
-          <a className="button button-primary" href="#experience">View experience <ArrowUpRight size={18} /></a>
-          <a className="button button-text" href="#contact">Get in touch <ArrowRight size={18} /></a>
+          <a className="button button-primary" href="/experience">View experience <ArrowUpRight size={18} /></a>
+          <Link className="button button-text" href="/contact">Get in touch <ArrowRight size={18} /></Link>
         </div>
         <div className="hero-meta">
           <div className="social-links" aria-label="Professional profiles">

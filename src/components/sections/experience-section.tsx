@@ -1,14 +1,16 @@
-import { ChevronDown, MapPin } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, ChevronDown, MapPin } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { experiences } from "@/data/portfolio";
 
 const orderedExperiences = [...experiences].sort((a, b) => Number(Boolean(a.upcoming)) - Number(Boolean(b.upcoming)));
 
-export function ExperienceSection() {
+export function ExperienceSection({ standalone = false }: { standalone?: boolean }) {
   return (
     <section id="experience" className="section solution-experience-section">
       <div className="container">
-        <SectionHeading number="01" title="EXPERIENCE" />
+        {standalone && <Link className="experience-return" href="/"><ArrowLeft size={16} aria-hidden="true" />Back to portfolio</Link>}
+        <SectionHeading number="01" title="EXPERIENCE" as={standalone ? "h1" : "h2"} />
         <div className="solution-experience-list">
           {orderedExperiences.map((experience, index) => (
             <article className="solution-experience-item" key={experience.id}>
