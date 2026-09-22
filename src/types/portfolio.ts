@@ -9,6 +9,7 @@ export type Experience = {
   role: string;
   company: string;
   period: string;
+  upcoming?: boolean;
   location?: string;
   summary: string;
   contributions: { label: string; description: string }[];
@@ -69,9 +70,9 @@ export type Certification = {
   name: string;
   acquiredAt: string;
   issuer?: string;
-  asset:
-    | { kind: "pdf"; src: `/certificates/${string}.pdf` }
-    | { kind: "image"; src: `/certificates/${string}.${"jpg" | "jpeg" | "png" | "webp"}`; alt: string; width: number; height: number };
+  organization?: string;
+  note?: string;
+  asset: { kind: "image"; src: `/certificates/${string}.${"jpg" | "jpeg" | "png" | "webp"}`; alt: string; width: number; height: number };
 };
 
 export type SkillGroup = {

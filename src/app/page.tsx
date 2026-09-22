@@ -1,10 +1,8 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { HeroSection } from "@/components/sections/hero-section";
-import { AboutSection } from "@/components/sections/about-section";
-import { SkillsSection } from "@/components/sections/skills-section";
+import { OverviewSection } from "@/components/sections/overview-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
-import { EducationSection } from "@/components/sections/education-section";
+import { SkillsSection } from "@/components/sections/skills-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { CertificationsSection } from "@/components/sections/certifications-section";
 import { AchievementsSection } from "@/components/sections/achievements-section";
@@ -16,11 +14,9 @@ export default function Home() {
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader />
       <main id="main">
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
+        <OverviewSection />
         <ExperienceSection />
-        <EducationSection />
+        <SkillsSection />
         <ProjectsSection />
         <CertificationsSection />
         <AchievementsSection />

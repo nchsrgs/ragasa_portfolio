@@ -1,35 +1,30 @@
-import { ChevronDown } from "lucide-react";
-import { ExperienceDetails } from "@/components/detail-content";
+import { ChevronDown, MapPin } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { experiences } from "@/data/portfolio";
 
+const orderedExperiences = [...experiences].sort((a, b) => Number(Boolean(a.upcoming)) - Number(Boolean(b.upcoming)));
+
 export function ExperienceSection() {
   return (
-    <section id="experience" className="section section-experience">
+    <section id="experience" className="section solution-experience-section">
       <div className="container">
-        <SectionHeading number="03" title="Experience" aside="Where theory met production work." />
-        <div className="timeline-list">
-          {experiences.map((experience) => {
-            const hasMore = experience.contributions.length > 0 || Boolean(
-              experience.systems?.length || experience.tools?.length || experience.methodologies?.length,
-            );
-            return (
-              <article className="timeline-item experience-entry" key={experience.id}>
-                <div className="timeline-side"><span className="timeline-dot" /><span>{experience.period}</span></div>
-                <div className="timeline-content">
-                  <p className="item-kicker">{experience.company}</p>
-                  <h3>{experience.role}</h3>
-                  {experience.location && <p className="item-location">{experience.location}</p>}
-                  <p className="experience-highlight">{experience.contributions[0]?.description ?? experience.summary}</p>
-                  {experience.technologies.length > 0 && <ul className="experience-technologies" aria-label="Technology stack">{experience.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>}
-                  {hasMore && <details className="experience-disclosure" name="experience-details">
-                    <summary><span className="experience-more-label">View full experience</span><span className="experience-less-label">Hide details</span><ChevronDown size={17} aria-hidden="true" /></summary>
-                    <ExperienceDetails experience={experience} />
-                  </details>}
-                </div>
-              </article>
-            );
-          })}
+        <SectionHeading number="01" title="EXPERIENCE" />
+        <div className="solution-experience-list">
+          {orderedExperiences.map((experience, index) => (
+            <article className="solution-experience-item" key={experience.id}>
+              <div className="solution-experience-meta"><span>{String(index + 1).padStart(2, "0")} / {experience.upcoming ? "NEXT ROLE" : "DELIVERED WORK"}</span><p>{experience.period}</p></div>
+              <div className="solution-experience-body">
+                <div className="solution-experience-title"><h3>{experience.role}</h3>{experience.upcoming && <span>Upcoming</span>}</div>
+                <p className="solution-experience-company">{experience.company}{experience.location && <> <MapPin size={13} aria-hidden="true" /> {experience.location}</>}</p>
+                <p className="solution-experience-summary">{experience.summary}</p>
+                <div className="solution-contribution-heading">{experience.upcoming ? "Planned scope" : "Selected contributions"}</div>
+                <ul className="solution-contributions">
+                  {experience.contributions.slice(0, experience.upcoming ? 2 : 3).map((contribution) => <li key={contribution.label}><strong>{contribution.label}</strong><span>{contribution.description}</span></li>)}
+                </ul>
+                {experience.contributions.length > (experience.upcoming ? 2 : 3) && <details className="solution-experience-disclosure"><summary>More {experience.upcoming ? "planned responsibilities" : "contributions"}<ChevronDown size={16} aria-hidden="true" /></summary><ul className="solution-additional-contributions">{experience.contributions.slice(experience.upcoming ? 2 : 3).map((contribution) => <li key={contribution.label}><strong>{contribution.label}</strong><span>{contribution.description}</span></li>)}</ul></details>}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

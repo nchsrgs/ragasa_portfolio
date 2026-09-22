@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { Certification, Experience, Project } from "@/types/portfolio";
 
 function TechnologyList({ technologies }: { technologies: string[] }) {
@@ -10,7 +10,7 @@ export function ExperienceDetails({ experience }: { experience: Experience }) {
   return (
     <div className="detail-content experience-expanded">
       {experience.contributions.length > 0 && <p className="detail-intro">{experience.summary}</p>}
-      {experience.contributions.length > 1 && <section className="detail-content-section" aria-label="Additional contributions"><h4>Additional contributions</h4><dl className="contribution-list">{experience.contributions.slice(1).map((contribution) => <div className="contribution-row" key={contribution.label}><dt>{contribution.label}</dt><dd>{contribution.description}</dd></div>)}</dl></section>}
+      {experience.contributions.length > 0 && <section className="detail-content-section" aria-label={experience.upcoming ? "Planned responsibilities" : "Contributions"}><h4>{experience.upcoming ? "Planned responsibilities" : "Contributions"}</h4><dl className="contribution-list">{experience.contributions.map((contribution) => <div className="contribution-row" key={contribution.label}><dt>{contribution.label}</dt><dd>{contribution.description}</dd></div>)}</dl></section>}
       {experience.systems && experience.systems.length > 0 && <section className="detail-content-section"><h4>Systems worked on</h4><ul className="detail-bullet-list">{experience.systems.map((system) => <li key={system.name}><strong>{system.name}</strong><span>{system.description}</span></li>)}</ul></section>}
       {experience.tools && experience.tools.length > 0 && <section className="detail-content-section"><h4>Tools</h4><p>{experience.tools.join(", ")}</p></section>}
       {experience.methodologies && experience.methodologies.length > 0 && <section className="detail-content-section"><h4>Ways of working</h4><p>{experience.methodologies.join(", ")}</p></section>}
@@ -57,13 +57,9 @@ export function CertificationDetails({ certification }: { certification: Certifi
     <div className="detail-content">
       <div className="detail-facts"><span>{certification.acquiredAt}</span>{certification.issuer && <span>{certification.issuer}</span>}</div>
       <div className="certificate-viewer">
-        {asset.kind === "pdf" ? (
-          <iframe src={asset.src} title={`${certification.name} certificate PDF`} loading="lazy" />
-        ) : (
-          <Image src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} sizes="(max-width: 760px) 100vw, 900px" />
-        )}
+        <Image src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} sizes="(max-width: 760px) 100vw, 900px" />
       </div>
-      <a className="certificate-open-link" href={asset.src} target="_blank" rel="noopener noreferrer">Open certificate in a new tab<ExternalLink size={16} /></a>
+      {certification.note && <p className="certificate-note">{certification.note}</p>}
     </div>
   );
 }

@@ -1,29 +1,24 @@
-import { DetailCard } from "@/components/detail-card";
-import { CertificationDetails } from "@/components/detail-content";
+import { ChevronDown } from "lucide-react";
+import { CertificateGallery } from "@/components/certificate-gallery";
 import { SectionHeading } from "@/components/section-heading";
-import { certifications } from "@/data/portfolio";
+import { certifications, education, projects } from "@/data/portfolio";
 
 export function CertificationsSection() {
-  if (certifications.length === 0) return null;
+  if (education.length === 0 && certifications.length === 0) return null;
+
+  const [degree, ...earlierEducation] = education;
 
   return (
-    <section id="certifications" className="section section-certifications">
+    <section id="credentials" className="section solution-credentials-section">
       <div className="container">
-        <SectionHeading number="06" title="Certifications" />
-        <div className="detail-card-grid detail-card-grid--certifications">
-          {certifications.map((certification, index) => (
-            <DetailCard
-              key={certification.id}
-              id={`certification-${certification.id}`}
-              kind="certification"
-              title={certification.name}
-              eyebrow={`Certificate / ${String(index + 1).padStart(2, "0")}`}
-              actionLabel="View certificate"
-              details={<CertificationDetails certification={certification} />}
-            >
-              <p className="detail-card-date">{certification.acquiredAt}</p>
-            </DetailCard>
-          ))}
+        <SectionHeading number={projects.length > 0 ? "04" : "03"} title="CREDENTIALS" />
+        <div className="solution-credentials-grid">
+          <div id="education" className="solution-education">
+            <h3>Education</h3>
+            {degree && <article><strong>{degree.qualification}</strong><p>{degree.school}</p><span>{degree.period}</span></article>}
+            {earlierEducation.length > 0 && <details><summary>Earlier education <ChevronDown size={16} aria-hidden="true" /></summary><div className="solution-earlier-education">{earlierEducation.map((item) => <article key={item.id}><strong>{item.qualification}</strong><p>{item.school}</p><span>{item.period}</span></article>)}</div></details>}
+          </div>
+          {certifications.length > 0 && <div id="certifications" className="solution-certificates"><h3>Certificates <span>{String(certifications.length).padStart(2, "0")}</span></h3><CertificateGallery certifications={certifications} /></div>}
         </div>
       </div>
     </section>

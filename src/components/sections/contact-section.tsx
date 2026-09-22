@@ -7,8 +7,8 @@ export function ContactSection() {
       <div className="container contact-inner">
         <div>
           <span className="contact-eyebrow">LET&apos;S CONNECT</span>
-          <h2>Have something<br /><em>in mind?</em></h2>
-          <p>Whether it is a role, a collaboration, or a conversation about technology, I would be glad to hear from you.</p>
+          <h2>Let&apos;s talk through<br /><em>the problem.</em></h2>
+          <p>For development roles, systems implementation, or a conversation about a technical challenge, I would be glad to connect.</p>
           <div className="contact-methods">
             <a className="contact-email" href={`mailto:${profile.email}`} aria-label={`Contact Nichos by email at ${profile.email}`}><Mail size={18} aria-hidden="true" />Contact Nichos</a>
             <a className="contact-phone" href={profile.phoneHref}><Phone size={17} />{profile.phone}</a>

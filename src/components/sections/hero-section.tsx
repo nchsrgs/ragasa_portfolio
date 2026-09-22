@@ -14,7 +14,7 @@ export function HeroSection() {
         <h1 id="hero-title" aria-label={profile.name}>
           {profile.nameLines.map((line, lineIndex) => (
             <span className="hero-name-line" aria-hidden="true" key={line}>
-              {Array.from(lineIndex === profile.nameLines.length - 1 ? `${line}.` : line).map((letter, letterIndex) => (
+              {Array.from(lineIndex === profile.nameLines.length - 1 ? `${line}` : line).map((letter, letterIndex) => (
                 <span className="hero-letter" key={`${letterIndex}-${letter}`} style={{ animationDelay: `${(lineIndex * 8 + letterIndex) * 38}ms` }}>{letter}</span>
               ))}
             </span>
