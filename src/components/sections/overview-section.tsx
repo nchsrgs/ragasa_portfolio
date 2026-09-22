@@ -21,7 +21,7 @@ export function OverviewSection() {
             </div>
           </div>
           <div className="overview-identity-copy">
-            <p className="overview-location"><MapPin size={14} strokeWidth={1.8} aria-hidden="true" />Bulacan, PH</p>
+            <p className="overview-location"><MapPin size={14} strokeWidth={1.8} aria-hidden="true" />BULACAN | PH</p>
             <div className="overview-socials" aria-label="Professional profiles">
               {socialLinks.map((link) => {
                 const Icon = iconByKind[link.kind];
