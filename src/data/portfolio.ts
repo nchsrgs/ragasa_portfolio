@@ -14,7 +14,7 @@ const nameLines = ["Nichos", "Ragasa"];
 export const profile = {
   name: nameLines.join(" "),
   nameLines,
-  role: "Software Developer",
+  role: "System Consultant",
   incomingRole: {
     title: "System Consultant",
     company: "128 Tech Consulting, Inc.",
@@ -73,10 +73,10 @@ export const experiences: Experience[] = [
     location: "Ortigas, Pasig",
     period: "Starting Oct 2026",
     upcoming: true,
-    summary: "Scheduled to join 128 Tech Consulting, Inc. in October 2026 as a System Consultant. The responsibilities below describe the planned scope of the role.",
+    summary: "Scheduled to join 128 Tech Consulting, Inc. in October 2026 as a System Consultant, with a client-facing focus on application support and the company's HR systems. The responsibilities below describe the planned scope of the role.",
     contributions: [
-      { label: "Implementation", description: "Support system implementation, client training, and system demonstrations." },
-      { label: "Client support", description: "Provide application support and analyze client requirements." },
+      { label: "Client needs & support", description: "Work with clients to understand requirements, investigate application issues, and recommend practical solutions." },
+      { label: "Implementation & training", description: "Support HR system implementation, train users, and deliver system demonstrations." },
       { label: "Quality & documentation", description: "Perform system quality testing and prepare project documentation." },
     ],
     technologies: ["SQL"],

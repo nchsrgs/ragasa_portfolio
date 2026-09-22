@@ -33,11 +33,11 @@ export function OverviewSection() {
         </div>
 
         <div className="solution-hero-copy">
-          <p className="solution-hero-kicker"><span aria-hidden="true" />Software Engineer / System Consultant</p>
+          <p className="solution-hero-kicker"><span aria-hidden="true" />Software Engineering / Systems Consulting</p>
           <h1 id="hero-name">{profile.name}</h1>
-          <h2>Turning requirements into <em>reliable software.</em></h2>
+          <h2>Building reliable software. <em>Solving real client problems.</em></h2>
         </div>
-        <p className="solution-hero-intro">I build backend features and data-driven applications, then carry changes through testing and release. I care about the decisions that make a system useful to the people behind the requirements.</p>
+        <p className="solution-hero-intro">My backend experience spans APIs, data-driven features, testing, and release support. As I move into systems consulting, I am focused on understanding client requirements, resolving application issues, and helping people use their systems with confidence.</p>
         <div className="solution-hero-role"><span>Next chapter</span><p>Incoming System Consultant at {profile.incomingRole.company} <strong>· {profile.incomingRole.starts}</strong></p></div>
         <div className="overview-actions solution-hero-actions">
           <a className="button button-primary" href="#experience">Explore experience <ArrowDownRight size={18} aria-hidden="true" /></a>
