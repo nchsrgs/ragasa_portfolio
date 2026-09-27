@@ -294,12 +294,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--type-secondary)
 .section-contact h2 em { color: var(--type-secondary); }
 .section-contact p { max-width: 540px; margin: 0 0 34px; color: var(--contact-muted); font-size: 16px; line-height: 1.75; }
 .contact-methods { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
-.contact-email { min-height: 48px; display: inline-flex; align-items: center; gap: 12px; padding: 0 18px; border: 1px solid var(--contact-line); border-radius: 6px; background: var(--contact-ink); color: var(--contact-bg); font-size: 15px; font-weight: 700; box-shadow: 0 8px 24px var(--glass-shadow); transition: transform .2s, background .2s, border-color .2s, color .2s; }
-.contact-email:hover, .contact-email:focus-visible { transform: translateY(-2px); border-color: var(--overview-accent); background: var(--overview-accent); color: var(--overview-accent-ink); }
-.contact-email svg { flex: 0 0 auto; }
-.contact-phone, .contact-address { display: inline-flex; align-items: center; gap: 10px; color: var(--contact-muted); font-size: 16px; font-weight: 600; }
-.contact-phone svg, .contact-address svg { flex: 0 0 auto; }
-.contact-phone:hover, .contact-phone:focus-visible { color: var(--overview-accent); }
+.contact-method-row { display: flex; align-items: center; gap: 7px; }
+.contact-method-link, .contact-address { display: inline-flex; align-items: center; gap: 10px; color: var(--contact-muted); font-size: 16px; font-weight: 600; }
+.contact-method-link svg, .contact-address svg { flex: 0 0 auto; }
+.contact-method-link:hover, .contact-method-link:focus-visible { color: var(--overview-accent); }
+.contact-copy-button { display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 4px; padding: 0; background: transparent; color: var(--contact-muted); cursor: pointer; transition: color .2s, background .2s; }
+.contact-copy-button:hover, .contact-copy-button:focus-visible { background: color-mix(in srgb, var(--overview-accent) 12%, transparent); color: var(--overview-accent); }
 .contact-side { display: flex; flex-direction: column; gap: 19px; align-self: end; }
 .contact-side > span { margin-bottom: 4px; color: var(--contact-accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
 .contact-side a { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--contact-line); padding-bottom: 11px; font-size: 14px; }

@@ -22,7 +22,7 @@ export const profile = {
   },
   location: "Bulacan, Philippines",
   address: "Marilao, Bulacan",
-  email: "ragasa.nichos28@gmail.com",
+  email: "ragasa.nichos@gmail.com",
   phone: "+639694831797",
   phoneHref: "tel:+639694831797",
   heroLead: "I build backend APIs and database-driven applications.",
