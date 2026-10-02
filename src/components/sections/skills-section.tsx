@@ -4,10 +4,10 @@ import { SkillIcon } from "@/components/skill-icon";
 import { skillGroups } from "@/data/portfolio";
 
 const capabilities = [
-  { title: "Backend systems", description: "Application logic, REST APIs, and maintainable services.", tools: ["Node.js", "Express.js", "TypeScript", "Spring Boot"] },
-  { title: "Data & integration", description: "Relational models, queries, and dependable data flows.", tools: ["SQL", "PostgreSQL", "MySQL", "TypeORM", "Firebase"] },
+  { title: "Frontend", description: "Responsive interfaces and clear user workflows.", tools: ["React", "Next.js", "TypeScript", "CSS"] },
+  { title: "Backend", description: "Application logic, REST APIs, and maintainable services.", tools: ["Node.js", "Express.js", "TypeScript", "Java"] },
+  { title: "Data", description: "Relational models, queries, and dependable data flows.", tools: ["SQL", "PostgreSQL", "MySQL", "TypeORM", "Firebase"] },
   { title: "Quality & delivery", description: "Testing, debugging, documentation, and release support.", tools: ["Unit Testing", "Linux", "Git", "Docker"] },
-  { title: "Interfaces & workflow", description: "Frontend foundations and collaborative development.", tools: ["React", "Next.js", "Agile Development", "Jira"] },
 ] as const;
 
 export function SkillsSection() {

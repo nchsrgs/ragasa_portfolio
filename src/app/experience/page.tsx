@@ -6,7 +6,7 @@ import { ExperienceSection } from "@/components/sections/experience-section";
 
 export const metadata: Metadata = {
   title: "Experience | Nichos Ragasa",
-  description: "Nichos Ragasa's software engineering experience and upcoming systems consulting role.",
+  description: "Nichos Ragasa's software engineering experience in enterprise APIs, data, testing, and delivery.",
 };
 
 export default function ExperiencePage() {

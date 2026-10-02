@@ -14,23 +14,18 @@ const nameLines = ["Nichos", "Ragasa"];
 export const profile = {
   name: nameLines.join(" "),
   nameLines,
-  role: "System Consultant",
-  incomingRole: {
-    title: "System Consultant",
-    company: "128 Tech Consulting, Inc.",
-    starts: "October 2026",
-  },
+  role: "Software Engineer",
   location: "Bulacan, Philippines",
   address: "Marilao, Bulacan",
   email: "ragasa.nichos@gmail.com",
   phone: "+639694831797",
   phoneHref: "tel:+639694831797",
-  heroLead: "I build backend APIs and database-driven applications.",
+  heroLead: "I build dependable software across the stack.",
   heroDescription:
-    "From REST APIs to relational data and deployment support, I bring a careful, collaborative approach to turning requirements into working software.",
+    "From interfaces and REST APIs to relational data and deployment, I turn requirements into working software.",
   bio: [
     "I am a BSIT graduate from STI College Caloocan. At Indra Philippines, I built RESTful APIs and database-driven features, investigated backend issues, and supported deployments in an Agile team.",
-    "My current focus is deepening my software engineering practice across backend systems, architecture, and full-stack development. Over time, I hope to bring that technical grounding into AI solutions architecture and client-facing work.",
+    "I work across frontend, backend, and data, with an emphasis on maintainable code, careful debugging, and reliable delivery.",
   ],
   photo: {
     src: "/images/nichos-portrait-editorial.png",
@@ -46,10 +41,10 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const practiceAreas: PracticeArea[] = [
-  { label: "Backend & APIs", detail: "Node.js, Express.js, REST APIs" },
-  { label: "Programming Languages", detail: "TypeScript, JavaScript, Java" },
-  { label: "Database Architecture", detail: "SQL, MySQL, PostgreSQL, Firebase" },
-  { label: "Delivery", detail: "Linux, testing, debugging, Agile" },
+  { label: "Frontend", detail: "React, Next.js, HTML, CSS" },
+  { label: "Backend & APIs", detail: "Node.js, Express.js, TypeScript" },
+  { label: "Data", detail: "SQL, MySQL, PostgreSQL, Firebase" },
+  { label: "Delivery", detail: "Testing, debugging, Linux, Agile" },
 ];
 
 export const skillGroups = [
@@ -67,26 +62,11 @@ export type SkillName = (typeof skillGroups)[number]["items"][number] | (typeof 
 
 export const experiences: Experience[] = [
   {
-    id: "128-tech-system-consultant",
-    role: "System Consultant",
-    company: "128 Tech Consulting, Inc.",
-    location: "Ortigas, Pasig",
-    period: "Starting Oct 2026",
-    upcoming: true,
-    summary: "Scheduled to join 128 Tech Consulting, Inc. in October 2026 as a System Consultant, with a client-facing focus on application support and the company's HR systems. The responsibilities below describe the planned scope of the role.",
-    contributions: [
-      { label: "Client needs & support", description: "Work with clients to understand requirements, investigate application issues, and recommend practical solutions." },
-      { label: "Implementation & training", description: "Support HR system implementation, train users, and deliver system demonstrations." },
-      { label: "Quality & documentation", description: "Perform system quality testing and prepare project documentation." },
-    ],
-    technologies: ["SQL"],
-  },
-  {
     id: "indra-backend-intern",
-    role: "Backend Developer Intern",
+    role: "Backend Engineer Intern",
     company: "Indra Philippines",
     location: "Ortigas, Pasig",
-    period: "Feb 2026 - Aug 2026",
+    period: "Feb 2026 - Jul 2026",
     summary: "Developed and maintained backend features for enterprise internal applications, from data changes and testing through release support.",
     contributions: [
       { label: "Application features", description: "Implemented a file archiving function for managing archived records and refreshed system email templates for consistent branding." },

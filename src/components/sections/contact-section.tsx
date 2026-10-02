@@ -11,7 +11,7 @@ export function ContactSection({ standalone = false }: { standalone?: boolean })
           {standalone && <Link className="experience-return" href="/"><ArrowLeft size={16} aria-hidden="true" />Back to portfolio</Link>}
           <span className="contact-eyebrow">LET&apos;S CONNECT</span>
           {standalone ? <h1>Let&apos;s talk through<br /><em>the problem.</em></h1> : <h2>Let&apos;s talk through<br /><em>the problem.</em></h2>}
-          <p>For development roles, systems implementation, or a conversation about a technical challenge, I would be glad to connect.</p>
+          <p>For software engineering roles, full-stack projects, or a conversation about a technical challenge, I would be glad to connect.</p>
           <div className="contact-methods">
             <ContactMethod href={`mailto:${profile.email}?subject=Portfolio%20inquiry`} label={profile.email} copyValue={profile.email} icon={<Mail size={17} aria-hidden="true" />} />
             <ContactMethod href={profile.phoneHref} label={profile.phone} copyValue={profile.phone} icon={<Phone size={17} aria-hidden="true" />} />

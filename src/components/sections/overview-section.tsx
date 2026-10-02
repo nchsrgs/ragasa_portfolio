@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile, socialLinks } from "@/data/portfolio";
 
 const iconByKind = { github: Github, linkedin: Linkedin, email: Mail };
-const lifecycleStages = ["Discover", "Design", "Build", "Test", "Deploy", "Train", "Support"];
+const lifecycleStages = ["Understand", "Design", "Build", "Test", "Refine", "Deploy", "Support"];
+const nameWords = profile.name.split(" ");
 
 export function OverviewSection() {
   return (
@@ -29,20 +29,28 @@ export function OverviewSection() {
         </div>
 
         <div className="solution-hero-copy">
-          <p className="solution-hero-kicker"><span aria-hidden="true" />Software Engineering / Systems Consulting</p>
-          <h1 id="hero-name">{profile.name}</h1>
-          <h2>Building reliable software. <em>Solving real client problems.</em></h2>
+          <p className="solution-hero-kicker"><span aria-hidden="true" />Software Engineer / Full-stack development</p>
+          <h1 id="hero-name" aria-label={profile.name}>
+            {nameWords.map((word, wordIndex) => (
+              <span className="solution-name-word" aria-hidden="true" key={word}>
+                {[...word].map((letter, letterIndex) => (
+                  <span
+                    className="solution-name-letter"
+                    key={`${word}-${letterIndex}`}
+                    style={{ animationDelay: `${120 + (wordIndex * (nameWords[0].length + 1) + letterIndex) * 38}ms` }}
+                  >{letter}</span>
+                ))}
+              </span>
+            ))}
+          </h1>
+          <h2>Building dependable software <em>across the stack.</em></h2>
         </div>
-        <p className="solution-hero-intro">My backend experience spans APIs, data-driven features, testing, and release support. As I move into systems consulting, I am focused on understanding client requirements, resolving application issues, and helping people use their systems with confidence.</p>
-        <div className="solution-hero-role"><span>Next chapter</span><p>Incoming System Consultant at {profile.incomingRole.company} <strong>· {profile.incomingRole.starts}</strong></p></div>
-        <div className="overview-actions solution-hero-actions">
-          <Link className="button button-primary" href="/experience">Explore experience <ArrowRight size={18} aria-hidden="true" /></Link>
-          <Link className="overview-scroll-link" href="/contact">Get in touch <ArrowUpRight size={17} aria-hidden="true" /></Link>
-        </div>
+        <p className="solution-hero-intro">I turn requirements into working applications, connecting thoughtful interfaces with reliable APIs and data. My experience includes enterprise backend development, testing, debugging, and deployment support.</p>
+        <div className="solution-hero-role"><span>Focus</span><p>Frontend <strong>/</strong> Backend <strong>/</strong> Data <strong>/</strong> Delivery</p></div>
       </div>
       <div className="lifecycle-band">
         <div className="container lifecycle-viewport">
-          <ol className="lifecycle-list" aria-label="Development and consulting lifecycle">
+          <ol className="lifecycle-list" aria-label="Software development lifecycle">
             {lifecycleStages.map((stage) => <li key={stage}>{stage}</li>)}
           </ol>
         </div>

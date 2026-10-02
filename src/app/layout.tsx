@@ -10,14 +10,14 @@ const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans", dis
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: `${profile.name} | System Consultant`,
-  description: `${profile.name} develops backend and data-driven software and is preparing for a System Consultant role at 128 Tech Consulting, Inc.`,
+  title: `${profile.name} | Software Engineer`,
+  description: `${profile.name} is a software engineer working across frontend, backend, data, testing, and delivery.`,
   applicationName: `${profile.name} Portfolio`,
   authors: [{ name: profile.name }],
   openGraph: {
     type: "website",
-    title: `${profile.name} | System Consultant`,
-    description: `${profile.name} develops backend and data-driven software and is preparing for a System Consultant role at 128 Tech Consulting, Inc.`,
+    title: `${profile.name} | Software Engineer`,
+    description: `${profile.name} is a software engineer working across frontend, backend, data, testing, and delivery.`,
   },
   icons: { icon: "/favicon.svg" },
 };
