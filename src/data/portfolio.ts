@@ -114,7 +114,7 @@ export const experiences: Experience[] = [
     id: "nlex-software-engineer",
     role: "Software Engineer",
     company: "Indra Philippines",
-    location: "Ortigas, Pasig",
+    location: "Sta.Rita, Bulacan",
     period: "Oct 2026 - Present",
     summary:
       "Developing and enhancing lane systems for an expressway Toll Collection System (TCS), applying Lua programming and object-oriented development principles within a sprint-based software development environment.",
