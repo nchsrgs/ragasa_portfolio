@@ -15,11 +15,19 @@ import {
   Triangle,
   Workflow,
   type LucideIcon,
+  FileCode,
+  Monitor,
 } from "lucide-react";
 import type { SkillName } from "@/data/portfolio";
 
 type SkillIconDefinition =
-  | { kind: "brand"; src: string; monochrome?: boolean; boostOnDark?: boolean; invertOnDark?: boolean }
+  | {
+      kind: "brand";
+      src: string;
+      monochrome?: boolean;
+      boostOnDark?: boolean;
+      invertOnDark?: boolean;
+    }
   | { kind: "concept"; icon: LucideIcon };
 
 const skillIcons: Record<SkillName, SkillIconDefinition> = {
@@ -29,15 +37,27 @@ const skillIcons: Record<SkillName, SkillIconDefinition> = {
   Java: { kind: "brand", src: "/icons/devicon/java-original.svg" },
   "C#": { kind: "brand", src: "/icons/devicon/csharp-original.svg" },
   "Node.js": { kind: "brand", src: "/icons/devicon/nodejs-original.svg" },
-  "Express.js": { kind: "brand", src: "/icons/devicon/express-original.svg", monochrome: true },
+  "Express.js": {
+    kind: "brand",
+    src: "/icons/devicon/express-original.svg",
+    monochrome: true,
+  },
   "Spring Boot": { kind: "concept", icon: Leaf },
   "RESTful APIs": { kind: "concept", icon: Network },
   TypeORM: { kind: "brand", src: "/icons/typeorm.svg", monochrome: true },
   React: { kind: "concept", icon: Atom },
-  "Next.js": { kind: "brand", src: "/icons/devicon/nextjs-original.svg", invertOnDark: true },
+  "Next.js": {
+    kind: "brand",
+    src: "/icons/devicon/nextjs-original.svg",
+    invertOnDark: true,
+  },
   HTML5: { kind: "brand", src: "/icons/devicon/html5-original.svg" },
   CSS3: { kind: "brand", src: "/icons/devicon/css3-original.svg" },
-  MySQL: { kind: "brand", src: "/icons/devicon/mysql-original.svg", boostOnDark: true },
+  MySQL: {
+    kind: "brand",
+    src: "/icons/devicon/mysql-original.svg",
+    boostOnDark: true,
+  },
   PostgreSQL: { kind: "brand", src: "/icons/devicon/postgresql-original.svg" },
   Firebase: { kind: "brand", src: "/icons/devicon/firebase-original.svg" },
   Git: { kind: "brand", src: "/icons/devicon/git-original.svg" },
@@ -54,7 +74,18 @@ const skillIcons: Record<SkillName, SkillIconDefinition> = {
   XAMPP: { kind: "concept", icon: Server },
   Docker: { kind: "concept", icon: Container },
   Vercel: { kind: "concept", icon: Triangle },
-  Linux: { kind: "brand", src: "/icons/devicon/linux-plain.svg", monochrome: true },
+  Linux: {
+    kind: "brand",
+    src: "/icons/devicon/linux-plain.svg",
+    monochrome: true,
+  },
+  Lua: { kind: "brand", src: "/icons/devicon/lua-original.svg" },
+  "Notepad++": { kind: "concept", icon: FileCode },
+  "Oracle Database": {
+    kind: "brand",
+    src: "/icons/devicon/oracle-original.svg",
+  },
+  "Oracle Virtual Box": { kind: "concept", icon: Monitor },
   "Software Development Life Cycle": { kind: "concept", icon: GitBranch },
   "Agile Development": { kind: "concept", icon: Workflow },
   "Unit Testing": { kind: "concept", icon: TestTube2 },
@@ -64,6 +95,12 @@ const skillIcons: Record<SkillName, SkillIconDefinition> = {
 
 export function SkillIcon({ name }: { name: SkillName }) {
   const definition = skillIcons[name];
+
+  if (!definition) {
+    console.error(`Missing icon definition for skill: "${name}"`);
+    return null;
+  }
+
   if (definition.kind === "brand") {
     const url = `url("${definition.src}")`;
     if (definition.monochrome) {
@@ -86,5 +123,12 @@ export function SkillIcon({ name }: { name: SkillName }) {
   }
 
   const Icon = definition.icon;
-  return <Icon className="skill-icon" size={16} strokeWidth={1.9} aria-hidden="true" />;
+  return (
+    <Icon
+      className="skill-icon"
+      size={16}
+      strokeWidth={1.9}
+      aria-hidden="true"
+    />
+  );
 }
