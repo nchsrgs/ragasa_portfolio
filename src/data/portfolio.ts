@@ -147,8 +147,8 @@ export const experiences: Experience[] = [
       {
         label: "Collaboration",
         description:
-        "Worked with Software Engineers, QA Engineers, Project Manager, and Toll Tellers in an agile sprint delivery"
-      }.
+          "Worked with Software Engineers, QA Engineers, Project Manager, and Toll Tellers in an agile sprint delivery",
+      },
     ],
     technologies: [
       "Lua",
