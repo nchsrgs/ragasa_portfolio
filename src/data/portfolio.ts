@@ -145,9 +145,9 @@ export const experiences: Experience[] = [
           "Applying object-oriented design principles and project conventions to develop, maintain, and troubleshoot lane system functionality while supporting reliable toll collection operations.",
       },
       {
-        label: "Collaboration",
+        label: "Cross-Functional Collaboration",
         description:
-          "Worked with Software Engineers, QA Engineers, Project Manager, and Toll Tellers in an agile sprint delivery",
+          "Coordinate with Software Engineers, QA Engineers, the Project Manager, and Toll Tellers to clarify requirements, support testing, and align software functionality with operational needs.",
       },
     ],
     technologies: [
