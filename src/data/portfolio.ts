@@ -144,6 +144,11 @@ export const experiences: Experience[] = [
         description:
           "Applying object-oriented design principles and project conventions to develop, maintain, and troubleshoot lane system functionality while supporting reliable toll collection operations.",
       },
+      {
+        label: "Collaboration",
+        description:
+        "Worked with Software Engineers, QA Engineers, Project Manager, and Toll Tellers in an agile sprint delivery"
+      }.
     ],
     technologies: [
       "Lua",
